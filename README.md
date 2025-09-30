@@ -2,7 +2,16 @@
 
 A powerful and intuitive web interface for controlling and managing autonomous browser agents, built with Gradio and Python. **NavMind** is designed from the ground up for multiple users, featuring secure authentication, isolated sessions, and parallel task execution.
 
-![NavMind Screenshot](https://your-screenshot-link-here.png)
+[![NavMind Screenshot]([assets/Screenshot 2025-09-29 225455.png](https://github.com/haskbasirat/NavMind/blob/efdbf85f0c7a08562907c20bd65bb46fea07b208/assets/Screenshot%202025-09-29%20225455.png))
+](https://github.com/haskbasirat/NavMind/blob/efdbf85f0c7a08562907c20bd65bb46fea07b208/assets/Screenshot%202025-09-29%20225455.png)
+
+https://github.com/haskbasirat/NavMind/blob/efdbf85f0c7a08562907c20bd65bb46fea07b208/assets/Screenshot%202025-09-29%20225550.png
+
+https://github.com/haskbasirat/NavMind/blob/efdbf85f0c7a08562907c20bd65bb46fea07b208/assets/Screenshot%202025-09-29%20225709.png
+
+https://github.com/haskbasirat/NavMind/blob/efdbf85f0c7a08562907c20bd65bb46fea07b208/assets/Screenshot%202025-09-29%20225722.png
+
+
 
 > **Note**: Replace the link above with a real screenshot of your application! A good visual is the most important part of a README.
 
@@ -150,3 +159,4 @@ Your account will be created in a local `user_database.json` file, and you will 
 ## 📄 License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
