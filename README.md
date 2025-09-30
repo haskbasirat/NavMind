@@ -11,9 +11,10 @@ https://github.com/haskbasirat/NavMind/blob/efdbf85f0c7a08562907c20bd65bb46fea07
 
 https://github.com/haskbasirat/NavMind/blob/efdbf85f0c7a08562907c20bd65bb46fea07b208/assets/Screenshot%202025-09-29%20225722.png
 
+[NavMind Screenshot](assets/Screenshot 2025-09-29 225733.png)
+
 assets/Screenshot 2025-09-29 225733.png
 
-> **Note**: Replace the link above with a real screenshot of your application! A good visual is the most important part of a README.
 
 ---
 
@@ -159,5 +160,6 @@ Your account will be created in a local `user_database.json` file, and you will 
 ## 📄 License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
 
 
