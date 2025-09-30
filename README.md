@@ -1,151 +1,87 @@
-<img src="./assets/web-ui.png" alt="Browser Use Web UI" width="full"/>
-
-<br/>
-
-[![GitHub stars](https://img.shields.io/github/stars/browser-use/web-ui?style=social)](https://github.com/browser-use/web-ui/stargazers)
-[![Discord](https://img.shields.io/discord/1303749220842340412?color=7289DA&label=Discord&logo=discord&logoColor=white)](https://link.browser-use.com/discord)
-[![Documentation](https://img.shields.io/badge/Documentation-📕-blue)](https://docs.browser-use.com)
-[![WarmShao](https://img.shields.io/twitter/follow/warmshao?style=social)](https://x.com/warmshao)
-
-This project builds upon the foundation of the [browser-use](https://github.com/browser-use/browser-use), which is designed to make websites accessible for AI agents.
-
-We would like to officially thank [WarmShao](https://github.com/warmshao) for his contribution to this project.
-
-**WebUI:** is built on Gradio and supports most of `browser-use` functionalities. This UI is designed to be user-friendly and enables easy interaction with the browser agent.
-
-**Expanded LLM Support:** We've integrated support for various Large Language Models (LLMs), including: Google, OpenAI, Azure OpenAI, Anthropic, DeepSeek, Ollama etc. And we plan to add support for even more models in the future.
-
-**Custom Browser Support:** You can use your own browser with our tool, eliminating the need to re-login to sites or deal with other authentication challenges. This feature also supports high-definition screen recording.
-
-**Persistent Browser Sessions:** You can choose to keep the browser window open between AI tasks, allowing you to see the complete history and state of AI interactions.
-
-<video src="https://github.com/user-attachments/assets/56bc7080-f2e3-4367-af22-6bf2245ff6cb" controls="controls">Your browser does not support playing this video!</video>
-
-## Installation Guide
-
-### Option 1: Local Installation
-
-Read the [quickstart guide](https://docs.browser-use.com/quickstart#prepare-the-environment) or follow the steps below to get started.
-
-#### Step 1: Clone the Repository
-```bash
-git clone https://github.com/browser-use/web-ui.git
-cd web-ui
-```
-
-#### Step 2: Set Up Python Environment
-We recommend using [uv](https://docs.astral.sh/uv/) for managing the Python environment.
-
-Using uv (recommended):
-```bash
-uv venv --python 3.11
-```
-
-Activate the virtual environment:
-- Windows (Command Prompt):
-```cmd
-.venv\Scripts\activate
-```
-- Windows (PowerShell):
-```powershell
-.\.venv\Scripts\Activate.ps1
-```
-- macOS/Linux:
-```bash
+Here is a complete, professional README.md file for your project, including a title, a detailed description, feature list, and setup instructions. You can copy and paste this directly into a file named README.md in your project's root folder.
+NavMind: A Multi-User Web UI for Autonomous Browser Agents
+A powerful and intuitive web interface for controlling and managing autonomous browser agents, built with Gradio and Python. NavMind is designed from the ground up for multiple users, featuring secure authentication, isolated sessions, and parallel task execution.
+Note: Replace the link above with a real screenshot of your application! A good visual is the most important part of a README.
+✨ Core Features
+🔐 Secure Multi-User Authentication: Built-in sign-up and login system to protect your agent. User credentials are securely hashed and stored.
+👤 Isolated User Sessions: Each logged-in user gets their own independent agent instance. Chat history, browser state, and running tasks are completely separate from other users.
+⚡ Parallel Task Execution: The server is configured to handle multiple user requests concurrently, allowing several agents to run tasks at the same time without blocking each other.
+🎨 Sleek Custom Interface: A modern, custom-themed dark mode UI that is clean, responsive, and user-friendly.
+⚙️ Comprehensive Configuration: Easily configure agent and browser settings through the UI, including:
+LLM provider, model, and temperature.
+Headless mode and browser window size.
+Paths for saving agent history, recordings, and downloads.
+🚀 Developer Friendly: Integrated auto-reloading for rapid development. Just save a file, and the server restarts with your changes.
+🛠️ Technology Stack
+Backend: Python
+Web Framework: Gradio
+Auto-Reload Server: Uvicorn
+Environment Management: python-dotenv
+🚀 Getting Started
+Follow these instructions to set up and run the project on your local machine.
+1. Prerequisites
+Python 3.10+
+Git
+2. Installation
+First, clone the repository to your local machine:
+code
+Bash
+git clone https://github.com/your-username/your-repository-name.git
+cd your-repository-name
+3. Create a Virtual Environment
+It's highly recommended to use a virtual environment to manage dependencies.
+On Windows:
+code
+Bash
+python -m venv .venv
+.\.venv\Scripts\activate
+On macOS / Linux:
+code
+Bash
+python3 -m venv .venv
 source .venv/bin/activate
-```
+4. Install Dependencies
+This project's dependencies are managed in requirements.txt.
+Important: If you don't have a requirements.txt file yet, create one by running this command in your activated virtual environment:
+code
+Bash
+pip freeze > requirements.txt
+Now, install all the required packages:
+code
+Bash
+pip install -r requirements.txt
+5. Environment Setup
+The application uses a .env file to manage secret keys and configurations.
+Create a file named .env in the root of the project and add your API keys and any other necessary variables. You can use the example below as a template:
+.env file:
+code
+Code
+# Example for Google Gemini
+GOOGLE_API_KEY="your_google_api_key_here"
 
-#### Step 3: Install Dependencies
-Install Python packages:
-```bash
-uv pip install -r requirements.txt
-```
+# Example for OpenAI
+# OPENAI_API_KEY="your_openai_api_key_here"
 
-Install Browsers in playwright. 
-```bash
-playwright install --with-deps
-```
-Or you can install specific browsers by running:
-```bash
-playwright install chromium --with-deps
-```
-
-#### Step 4: Configure Environment
-1. Create a copy of the example environment file:
-- Windows (Command Prompt):
-```bash
-copy .env.example .env
-```
-- macOS/Linux/Windows (PowerShell):
-```bash
-cp .env.example .env
-```
-2. Open `.env` in your preferred text editor and add your API keys and other settings
-
-#### Step 5: Enjoy the web-ui
-1.  **Run the WebUI:**
-    ```bash
-    python webui.py --ip 127.0.0.1 --port 7788
-    ```
-2. **Access the WebUI:** Open your web browser and navigate to `http://127.0.0.1:7788`.
-3. **Using Your Own Browser(Optional):**
-    - Set `BROWSER_PATH` to the executable path of your browser and `BROWSER_USER_DATA` to the user data directory of your browser. Leave `BROWSER_USER_DATA` empty if you want to use local user data.
-      - Windows
-        ```env
-         BROWSER_PATH="C:\Program Files\Google\Chrome\Application\chrome.exe"
-         BROWSER_USER_DATA="C:\Users\YourUsername\AppData\Local\Google\Chrome\User Data"
-        ```
-        > Note: Replace `YourUsername` with your actual Windows username for Windows systems.
-      - Mac
-        ```env
-         BROWSER_PATH="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-         BROWSER_USER_DATA="/Users/YourUsername/Library/Application Support/Google/Chrome"
-        ```
-    - Close all Chrome windows
-    - Open the WebUI in a non-Chrome browser, such as Firefox or Edge. This is important because the persistent browser context will use the Chrome data when running the agent.
-    - Check the "Use Own Browser" option within the Browser Settings.
-
-### Option 2: Docker Installation
-
-#### Prerequisites
-- Docker and Docker Compose installed
-  - [Docker Desktop](https://www.docker.com/products/docker-desktop/) (For Windows/macOS)
-  - [Docker Engine](https://docs.docker.com/engine/install/) and [Docker Compose](https://docs.docker.com/compose/install/) (For Linux)
-
-#### Step 1: Clone the Repository
-```bash
-git clone https://github.com/browser-use/web-ui.git
-cd web-ui
-```
-
-#### Step 2: Configure Environment
-1. Create a copy of the example environment file:
-- Windows (Command Prompt):
-```bash
-copy .env.example .env
-```
-- macOS/Linux/Windows (PowerShell):
-```bash
-cp .env.example .env
-```
-2. Open `.env` in your preferred text editor and add your API keys and other settings
-
-#### Step 3: Docker Build and Run
-```bash
-docker compose up --build
-```
-For ARM64 systems (e.g., Apple Silicon Macs), please run follow command:
-```bash
-TARGETPLATFORM=linux/arm64 docker compose up --build
-```
-
-#### Step 4: Enjoy the web-ui and vnc
-- Web-UI: Open `http://localhost:7788` in your browser
-- VNC Viewer (for watching browser interactions): Open `http://localhost:6080/vnc.html`
-  - Default VNC password: "youvncpassword"
-  - Can be changed by setting `VNC_PASSWORD` in your `.env` file
-
-## Changelog
-- [x] **2025/01/26:** Thanks to @vvincent1234. Now browser-use-webui can combine with DeepSeek-r1 to engage in deep thinking!
-- [x] **2025/01/10:** Thanks to @casistack. Now we have Docker Setup option and also Support keep browser open between tasks.[Video tutorial demo](https://github.com/browser-use/web-ui/issues/1#issuecomment-2582511750).
-- [x] **2025/01/06:** Thanks to @richard-devbot. A New and Well-Designed WebUI is released. [Video tutorial demo](https://github.com/warmshao/browser-use-webui/issues/1#issuecomment-2573393113).
+# VNC password if you are using the browser view
+VNC_PASSWORD="yourvncpword"
+🏃‍♀️ Running the Application
+You can run the server in two modes:
+1. Standard Mode
+This is the standard way to run the application.
+code
+Bash
+python webui.py
+2. Development Mode (with Auto-Reload)
+This mode is perfect for development. The server will automatically restart whenever you save a change to a Python file.
+code
+Bash
+python webui.py --reload
+Once the server is running, open your browser and navigate to http://localhost:7788.
+Signing Up a New User
+The application has a built-in sign-up system. When you first arrive at the login page:
+Click the "Sign Up" tab.
+Enter your desired username and password.
+Click the "Sign Up" button.
+Your account will be created in a local user_database.json file, and you will be logged in automatically. For future sessions, you can use the "Login" tab.
+📄 License
+This project is licensed under the MIT License. See the LICENSE file for details.
